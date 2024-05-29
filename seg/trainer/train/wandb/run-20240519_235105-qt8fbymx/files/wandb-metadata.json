@@ -1,0 +1,159 @@
+{
+    "os": "Linux-5.15.0-105-generic-x86_64-with-glibc2.17",
+    "python": "3.8.18",
+    "heartbeatAt": "2024-05-19T14:51:07.565732",
+    "startedAt": "2024-05-19T14:51:05.908046",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--model",
+        "monai_swinunet",
+        "--version",
+        "v8",
+        "--save_path",
+        "/mnt/HDD/chest-seg_models",
+        "--cuda",
+        "0",
+        "--ts_batch_size",
+        "32",
+        "--vs_batch_size",
+        "32",
+        "--epochs",
+        "1000",
+        "--loss",
+        "BCEwithlogits",
+        "--optimizer",
+        "AdamW",
+        "--learning_rate",
+        "0.0001",
+        "--scheduler",
+        "None",
+        "--pretrain",
+        "no",
+        "--pretrained_model",
+        "premodel",
+        "--error_signal",
+        "no",
+        "--wandb",
+        "yes "
+    ],
+    "state": "running",
+    "program": "./run.py",
+    "codePathLocal": "run.py",
+    "codePath": "trainer/train/run.py",
+    "git": {
+        "remote": "https://github.com/dablro12/chest-segmentation.git",
+        "commit": "3e3eff57beae5ced3663b9a500a271c4f59c675e"
+    },
+    "email": "dablro1232@gmail.com",
+    "root": "/home/eiden/eiden/chest-segmentation/src",
+    "host": "eiden",
+    "username": "eiden",
+    "executable": "/home/eiden/anaconda3/envs/eiden/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3.343375,
+        "min": 800.0,
+        "max": 5150.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 2.395,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3.5,
+            "min": 800.0,
+            "max": 5100.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 915.3232879638672,
+            "used": 583.0002861022949
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 31.169654846191406
+    }
+}

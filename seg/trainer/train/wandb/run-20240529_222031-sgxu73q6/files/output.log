@@ -1,0 +1,12 @@
+
+Model: MONAI-SwinUNET loaded successfully!! | pretrained : brain MRI
+Traceback (most recent call last):
+  File "./run.py", line 12, in <module>
+    main()
+  File "./run.py", line 8, in main
+    trainer =  Train(args = args)
+  File "/home/eiden/eiden/octc-segmentation/src/trainer/train/train.py", line 46, in __init__
+    self.setup_train(args)
+  File "/home/eiden/eiden/octc-segmentation/src/trainer/train/train.py", line 114, in setup_train
+    self.loss_fn = 0.5 * self.bce_fn + 0.5 * self.dice_fn
+TypeError: unsupported operand type(s) for *: 'float' and 'BCEWithLogitsLoss'

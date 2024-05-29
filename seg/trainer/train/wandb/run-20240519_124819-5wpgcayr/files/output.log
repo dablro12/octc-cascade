@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "./run.py", line 12, in <module>
+    main()
+  File "./run.py", line 8, in main
+    trainer =  Train(args = args)
+  File "/home/eiden/eiden/chest-segmentation/src/trainer/train/train.py", line 45, in __init__
+    self.initialize_models(args)
+  File "/home/eiden/eiden/chest-segmentation/src/trainer/train/train.py", line 98, in initialize_models
+    self.model = model_loader().to(self.device)
+  File "/home/eiden/eiden/chest-segmentation/src/trainer/train/../model/load_model.py", line 12, in __call__
+    return self.load_model()
+  File "/home/eiden/eiden/chest-segmentation/src/trainer/train/../model/load_model.py", line 40, in load_model
+    raise ValueError('Model name is not valid')
+ValueError: Model name is not valid

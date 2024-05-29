@@ -1,0 +1,29 @@
+
+Model: AttU_Net loaded successfully!! | pretrained : False
+  0%|          | 0/1000 [00:07<?, ?it/s]
+Traceback (most recent call last):
+  File "./run.py", line 12, in <module>
+    main()
+  File "./run.py", line 9, in main
+    trainer.fit()
+  File "/home/eiden/eiden/chest-segmentation/src/trainer/train/train.py", line 138, in fit
+    outputs = self.model(images)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eiden/eiden/chest-segmentation/src/trainer/train/../model/models.py", line 138, in forward
+    d2 = self.Up2(d3)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eiden/eiden/chest-segmentation/src/trainer/train/../model/modules/conv.py", line 30, in forward
+    x = self.up(x)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/upsampling.py", line 156, in forward
+    return F.interpolate(input, self.size, self.scale_factor, self.mode, self.align_corners,
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/functional.py", line 3931, in interpolate
+    return torch._C._nn.upsample_nearest2d(input, output_size, scale_factors)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 784.00 MiB (GPU 0; 23.62 GiB total capacity; 7.84 GiB already allocated; 173.38 MiB free; 8.09 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

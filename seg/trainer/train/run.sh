@@ -1,0 +1,13 @@
+python ./run.py --model "monai_swinunet" \
+                --version "v2" \
+                --save_path "/mnt/HDD/oci-seg_models" \
+                --cuda "0"\
+                --ts_batch_size 24\
+                --vs_batch_size 8\
+                --epochs 400\
+                --loss "BCE+DiceCELoss"\
+                --optimizer "AdamW"\
+                --learning_rate 0.0001\
+                --scheduler None\
+                --pretrain "no" --pretrained_model ".pt" --error_signal no\
+                --wandb "yes"\ > monai_swinunet.log 2>&1 &
