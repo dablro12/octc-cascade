@@ -1,31 +1,0 @@
-2024-05-19 12:48:56.245741: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2024-05-19 12:48:56.273768: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-wandb: Currently logged in as: dablro1232. Use `wandb login --relogin` to force relogin
-wandb: wandb version 0.17.0 is available!  To upgrade, please run:
-wandb:  $ pip install wandb --upgrade
-wandb: Tracking run with wandb version 0.16.4
-wandb: Run data is saved locally in /home/eiden/eiden/chest-segmentation/src/trainer/train/wandb/run-20240519_124858-4vrki3lx
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run feasible-microwave-50
-wandb: ⭐️ View project at https://wandb.ai/dablro1232/Chest-segmentation
-wandb: 🚀 View run at https://wandb.ai/dablro1232/Chest-segmentation/runs/4vrki3lx
-CUDA Status : cuda
-Model: R2AttU_Net loaded successfully!! | pretrained : False
-  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:01<?, ?it/s]
-wandb: - 0.003 MB of 0.003 MB uploadedwandb: \ 0.003 MB of 0.003 MB uploadedwandb: | 0.003 MB of 0.020 MB uploadedwandb: / 0.020 MB of 0.020 MB uploadedwandb: 🚀 View run feasible-microwave-50 at: https://wandb.ai/dablro1232/Chest-segmentation/runs/4vrki3lx
-wandb: ️⚡ View job at https://wandb.ai/dablro1232/Chest-segmentation/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjE3MzMwNzAxNQ==/version_details/v12
-wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20240519_124858-4vrki3lx/logs
-Traceback (most recent call last):
-  File "./run.py", line 12, in <module>
-    main()
-  File "./run.py", line 9, in main
-    trainer.fit()
-  File "/home/eiden/eiden/chest-segmentation/src/trainer/train/train.py", line 138, in fit
-    outputs = self.model(images)
-  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/eiden/eiden/chest-segmentation/src/trainer/train/../model/models.py", line 212, in forward
-    d3 = torch.cat((x2,d3),dim=1)
-torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 392.00 MiB (GPU 0; 23.62 GiB total capacity; 19.10 GiB already allocated; 310.50 MiB free; 19.67 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
