@@ -4,7 +4,7 @@ from models.inpaint import load_inpaint_model
 from models.segment import load_segment_model
 class cascade_models_load:
     """
-    <사용예시>
+    usage:
     cascade_model_loader = cascade_models_load(
         seg_model_path = '/mnt/HDD/oci-seg_models/monai_swinunet_v3_240530/model_400.pt',
         inpaint_model_path = '/mnt/HDD/oci_models/aotgan/OCI-GAN_v3_240508/model_64.pt',
@@ -12,42 +12,6 @@ class cascade_models_load:
         
         device = device
     )
-    seg_model, inpaint_model = cascade_model_loader.load_models()
-    cascade_model_name = cascade_model_loader.get_cascade_model_name()
-    """
-    
-    """
-    <설명>
-    cascade model loader
-    1. seg_model_path : segmentation model path
-    2. inpaint_model_path : inpainting model path
-    
-    3. device : device
-    
-    4. init_seg_model : segmentation model을 초기화하는 함수
-    5. load_seg_model : segmentation model을 로드하는 함수
-    6. init_inpaint_model : inpainting model을 초기화하는 함수
-    
-    7. load_inpaint_model : inpainting model을 로드하는 함수
-    8. get_cascade_model_name : cascade model의 이름을 반환하는 함수
-    9. load_models : segmentation model과 inpainting model을 로드하는 함수
-    
-    10. seg_model : segmentation model
-    11. inpaint_model : inpainting model
-    12. seg_model_name : segmentation model name
-    13. inpaint_model_name : inpainting model name
-    14. seg_model_path : segmentation model path
-    15. inpaint_model_path : inpainting model path
-    16. device : device
-    
-    17. cascade_model_name : cascade model name
-    
-    <주의>
-    1. segmentation model과 inpainting model의 이름을 가져오기 위해서는 get_cascade_model_name 함수를 사용해야함 
-    2. segmentation model과 inpainting model을 로드하기 위해서는 load_models 함수를 사용해야함 
-    3. segmentation model과 inpainting model을 초기화하기 위해서는 init_seg_model, init_inpaint_model 함수를 사용해야함 
-    4. segmentation model과 inpainting model을 로드하기 위해서는 load_seg_model, load_inpaint_model 함수를 사용해야함 
-    
     """
     def __init__(self, seg_model_path, inpaint_model_path, device, width = 512, height = 512):
         self.seg_model_name = seg_model_path.split('/')[-2]

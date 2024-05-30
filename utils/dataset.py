@@ -74,7 +74,7 @@ class Test_Cascade_CustomDataset(Dataset):
         return image, image_path
 
 class Inference_Cascade_CustomDataset(Dataset):
-    def __init__(self, image_dir,transform=None, seed = 627):
+    def __init__(self, image_dir,transform=None, exist_dir = '/home/eiden/eiden/octc-cascade/web/DB/output', seed = 627):
         """
         Args:
             image_dir (string): 경로 내 이미지 디렉토리
@@ -85,7 +85,11 @@ class Inference_Cascade_CustomDataset(Dataset):
         self.transform = transform
         self.seed = seed
         self.images = [os.path.join(image_dir, x) for x in os.listdir(image_dir) if x.endswith('.png')]
+        self.exist_dir = exist_dir
+        self.exist_images = [os.path.join(exist_dir, x) for x in os.listdir(exist_dir) if x.endswith('.png')]
         
+        self.init_inference_img()
+
     def __len__(self):
         return len(self.images)
 
@@ -100,7 +104,16 @@ class Inference_Cascade_CustomDataset(Dataset):
             image = self.transform(image)
 
         return image, image_path
-
+    
+    def init_inference_img(self):
+        ### web/DB/output에 있는 이미지는 제외하고 가지고 오기 -> 빠른 처리를 위함 
+        for exist_image in self.exist_images:
+            exist_image = exist_image.replace('output', 'data')
+            if exist_image in self.images:
+                self.images.remove(exist_image)
+        print(f"NC/C/Total Image Count : {len(self.images)}개/{len(self.exist_images)}개/{len(self.images) + len(self.exist_images)}개")
+        
+        
 
 class Segmentation_CustomDataset(Dataset):
     def __init__(self, image_dir, mask_dir,transform=None, testing = False, seed = 627):

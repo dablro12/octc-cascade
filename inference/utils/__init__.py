@@ -42,8 +42,3 @@ def mask_preprocessing(input_images, seg_masks):
     
     input_images = input_images.repeat(1,3,1,1) #입력값에 맞춰주기 위함 
     return input_images, inpaint_masks
-
-def prepare_images(self, images, masks):
-    input_images = images.clone()
-    input_images[masks != 0] = masks[masks != 0]
-    return images.to(self.device), input_images.to(self.device), masks[:,0,:,:].unsqueeze(1).to(self.device)

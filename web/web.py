@@ -75,7 +75,6 @@ class ImageProcessingApp:
                 if filename:
                     output_image_path = self.processor.process_image(self.uploader.input_dir, filename)
                     if output_image_path:
-                        print(username)
                         self.viewer.display_saved_images(username)
         elif authentication_status == False:
             st.error("Username/password is incorrect")
