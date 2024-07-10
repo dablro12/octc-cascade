@@ -6,22 +6,20 @@ The OCTC model is a deep learning-based framework designed to detect and remove 
 ## Installation
 ```bash
 # Clone the repository
-git clone https://github.com/username/OCTC.git
+git clone https://github.com/dablro12/octc-cascade.git
 
 # Navigate to the project directory
-cd OCTC
+cd octc-cascaded
 
 # Install the required dependencies
-pip install -r requirements.txt
+pip install -r env/requirements.txt
 ```
 
 ## Usage
 ```bash
-# Run the segmentation and inpainting model on sample data
-python run_model.py --input_dir ./data/input --output_dir ./data/output
-
 # To visualize the results
-streamlit run app.py
+chmod +x run.sh
+bash run.sh
 ```
 
 ## Results
